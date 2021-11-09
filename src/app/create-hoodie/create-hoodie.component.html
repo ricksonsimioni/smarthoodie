@@ -1,0 +1,25 @@
+<form [formGroup]="hoodieForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <div class="mb-3">
+        <ngx-qrcode
+        [elementType]="elementType"
+        [errorCorrectionLevel]="correctionLevel"
+        [value]="value"
+        cssClass="bshadow"></ngx-qrcode>
+        
+        <label>Hash</label>
+        <input type="text" formControlName="hash" id="hash" name="hash" class="form-control" disabled>
+    </div>
+
+    <div class="mb-3">
+        <label>Ativo</label>
+        <input type="checkbox" formControlName="status" value="false" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary" [disabled]="!hoodieForm.valid">Criar</button>
+    </div>
+</form>
+
+
+

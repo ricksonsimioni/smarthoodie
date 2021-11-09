@@ -1,0 +1,17 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()" novalidate>
+  
+  
+  <div class="mb-3">
+    <label>Hash</label>
+    <input type="text" formControlName="hash" disabled class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <label>Ativo</label>
+    <input type="checkbox" formControlName="status" class="form-control" required>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+<a class="nav-link" routerLink="/createHoodie" routerLinkActive="active">Criar Hoodie</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Hash</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hoodie of Hoodies; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+        <td>{{ hoodie.hash }}</td>      
+        <td>{{ hoodie.status }}</td>
+      <td>
+        <span (click)="removeHoodie(hoodie)" class="text-danger">Delete</span> &nbsp;
+        <span routerLink="/update-hoodie/{{hoodie.id}}" class="text-primary">Edit</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
